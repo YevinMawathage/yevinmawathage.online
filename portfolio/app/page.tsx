@@ -4,106 +4,88 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
-
   const companies = [
-    { name: "ClickUp", width: "w-20" },
-    { name: "Dropbox", width: "w-20" },
-    { name: "Paychex", width: "w-20" },
-    { name: "Elastic", width: "w-20" },
-    { name: "Stripe", width: "w-16" },
+    { name: "ClickUp" },
+    { name: "Dropbox" },
+    { name: "Paychex" },
+    { name: "Elastic" },
+    { name: "Stripe" },
   ];
 
   return (
-    <main className="min-h-screen bg-neutral-900 text-green-600 font-mono font-thin pt-32 sm:pt-40 flex justify-center">
-      <div className="p-8 sm:p-12 md:p-16 lg:p-24 w-full max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-2 sm:gap-2 lg:gap-4 items-start">
+    <main className="min-h-screen bg-neutral-900 text-green-600 font-mono font-thin flex items-center justify-center pt-24 sm:pt-32">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <div className="md:w-1/2 w-full text-center md:text-left z-10">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
             >
-              Yevin Mawathage
+              Web Developer & Designer
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-neutral-400 mb-6 sm:mb-8 max-w-md text-sm sm:text-base"
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-neutral-400 mb-6 sm:mb-8 max-w-md text-sm sm:text-base mx-auto md:mx-0"
             >
-              A passionate web developer and a graphic designer with a focus on creating modern and performant web applications and designs.
+              A passionate web developer and a graphic designer with a focus on
+              creating modern and performant web applications and designs.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex gap-4"
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex justify-center md:justify-start gap-4 mb-10 sm:mb-12 md:mb-16"
             >
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-green-600 hover:bg-green-700 text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg flex items-center gap-2 transition-colors group text-sm sm:text-base"
-                >
-                    My Work
-                </motion.button>
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border border-green-600 text-green-600 hover:bg-green-600 hover:text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg flex items-center gap-2 transition-colors group text-sm sm:text-base"
-                >
-                    Contact Me
-                </motion.button>
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit">
+                Let's get started
+              </button>
+              <button className="border border-green-600 hover:bg-green-600/10 text-green-600 px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit">
+                View Work
+              </button>
             </motion.div>
-          </motion.div>
 
-          {/* Right Content - Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end mt-8 lg:mt-0"
-          >
+            {/* Worked With Section */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex items-center justify-center md:justify-start gap-4"
             >
-              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 sm:border-4 border-green-600 shadow-2xl shadow-green-600/20">
-                <Image
-                  src="/assessts/images/DP.png"
-                  alt="Yevin Mawathage - Profile Picture"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                  priority
-                />
+              <p className="text-neutral-500 text-xs sm:text-sm whitespace-nowrap">
+                Worked with:
+              </p>
+              <div className="flex items-center gap-4 sm:gap-6 flex-wrap opacity-50">
+                {companies.map((company) => (
+                  <span key={company.name} className="text-sm">{company.name}</span>
+                ))}
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Worked With Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 sm:mt-20 md:mt-24 text-center"
-        >
-          <p className="text-neutral-500 text-xs sm:text-sm mb-4 sm:mb-6">Worked with</p>
-          <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap opacity-50">
-            {companies.map((company) => (
-              <div key={company.name} className={`${company.width} h-5 sm:h-6 bg-neutral-700 rounded`} />
-            ))}
           </div>
-        </motion.div>
+
+          {/* Right Angled Image */}
+          <div className="w-full md:w-1/2 h-96 md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0">
+            <motion.div
+              initial={{ opacity: 0, clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
+              animate={{ opacity: 1, clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+              className="relative w-full h-full bg-black"
+            >
+              <Image
+                src="/assessts/images/My-DP.png"
+                alt="Profile"
+                fill
+                className="object-contain object-right"
+              />
+            </motion.div>
+          </div>
+        </div>
       </div>
     </main>
   );

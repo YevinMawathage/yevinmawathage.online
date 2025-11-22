@@ -39,19 +39,19 @@ const Navbar = () => {
           {/* Left: Logo */}
           <div className="flex items-center justify-start">
             <Link href="/" className="text-xl md:text-2xl text-green-600">
-              YevinM.
+              Yevin.Mawathge  
             </Link>
           </div>
 
           {/* Center: Desktop Menu */}
-          <div className="hidden md:flex items-center justify-center md:space-x-4 lg:space-x-6">
-            <Link href="/work" className="text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors duration-300">
+          <div className="hidden md:flex items-center justify-center md:space-x-2 lg:space-x-4">
+            <Link href="/work" className="text-xs sm:text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors duration-300">
               Recent Work
             </Link>
-            <Link href="/about" className="text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors duration-300">
+            <Link href="/about" className="text-xs sm:text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors duration-300">
               About Me
             </Link>
-            <Link href="/contact" className="text-sm lg:text-base bg-gray-800 text-green-600 px-3 lg:px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">
+            <Link href="/contact" className="text-xs sm:text-sm lg:text-base bg-gray-800 text-green-600 px-3 lg:px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">
               Get In Touch
             </Link>
           </div>
