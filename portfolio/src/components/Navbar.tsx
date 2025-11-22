@@ -37,14 +37,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo */}
-          <div className="flex-1 flex items-center justify-start">
+          <div className="flex items-center justify-start">
             <Link href="/" className="text-xl md:text-2xl text-green-600">
-              Portfolio
+              YevinM.
             </Link>
           </div>
 
           {/* Center: Desktop Menu */}
-          <div className="hidden md:flex flex-1 items-center justify-center md:space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center justify-center md:space-x-4 lg:space-x-6">
             <Link href="/work" className="text-sm lg:text-base text-green-600 hover:text-green-700 transition-colors duration-300">
               Recent Work
             </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
 
           {/* Right: Social Icons */}
-          <div className="hidden md:flex flex-1 items-center justify-end space-x-4">
+          <div className="hidden md:flex items-center justify-end space-x-4">
             {socialLinks.map((social) => (
               <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700" title={`Visit ${social.href.includes('github') ? 'GitHub' : social.href.includes('linkedin') ? 'LinkedIn' : 'Twitter'} profile`}>
                 <social.icon className="h-5 w-5 lg:h-6 lg:w-6" />

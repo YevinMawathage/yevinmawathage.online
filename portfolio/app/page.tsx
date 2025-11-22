@@ -38,7 +38,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-neutral-400 mb-6 sm:mb-8 max-w-md text-sm sm:text-base"
             >
-              A passionate full-stack developer creating modern and performant web applications.
+              A passionate web developer and a graphic designer with a focus on creating modern and performant web applications and designs.
             </motion.p>
 
             <motion.div
@@ -69,7 +69,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center lg:justify-end mt-8 lg:mt-0"
+            className="flex justify-center lg:justify-end mt-8 lg:mt-0"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
