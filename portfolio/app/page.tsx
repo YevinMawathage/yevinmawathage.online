@@ -1,65 +1,110 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
+
+  const companies = [
+    { name: "ClickUp", width: "w-20" },
+    { name: "Dropbox", width: "w-20" },
+    { name: "Paychex", width: "w-20" },
+    { name: "Elastic", width: "w-20" },
+    { name: "Stripe", width: "w-16" },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="min-h-screen bg-neutral-900 text-green-600 font-mono font-thin pt-32 sm:pt-40 flex justify-center">
+      <div className="p-8 sm:p-12 md:p-16 lg:p-24 w-full max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-2 sm:gap-2 lg:gap-4 items-start">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            >
+              Yevin Mawathage
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-neutral-400 mb-6 sm:mb-8 max-w-md text-sm sm:text-base"
+            >
+              A passionate full-stack developer creating modern and performant web applications.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex gap-4"
+            >
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-green-600 hover:bg-green-700 text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg flex items-center gap-2 transition-colors group text-sm sm:text-base"
+                >
+                    My Work
+                </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="border border-green-600 text-green-600 hover:bg-green-600 hover:text-neutral-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg flex items-center gap-2 transition-colors group text-sm sm:text-base"
+                >
+                    Contact Me
+                </motion.button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden lg:flex justify-center lg:justify-end mt-8 lg:mt-0"
           >
-            Documentation
-          </a>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="relative"
+            >
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 sm:border-4 border-green-600 shadow-2xl shadow-green-600/20">
+                <Image
+                  src="/assessts/images/DP.png"
+                  alt="Yevin Mawathage - Profile Picture"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-    </div>
+
+        {/* Worked With Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="mt-16 sm:mt-20 md:mt-24 text-center"
+        >
+          <p className="text-neutral-500 text-xs sm:text-sm mb-4 sm:mb-6">Worked with</p>
+          <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap opacity-50">
+            {companies.map((company) => (
+              <div key={company.name} className={`${company.width} h-5 sm:h-6 bg-neutral-700 rounded`} />
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </main>
   );
 }
