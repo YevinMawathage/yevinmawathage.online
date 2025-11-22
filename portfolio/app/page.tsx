@@ -13,11 +13,11 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-neutral-900 text-green-600 font-mono font-thin flex items-center justify-center pt-24 sm:pt-32">
+    <main className="min-h-screen bg-neutral-900 text-green-600 font-mono font-thin pt-24 sm:pt-32">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+        <div className="relative">
           {/* Left Content */}
-          <div className="md:w-1/2 w-full text-center md:text-left z-10">
+          <div className="md:w-1/2 w-full text-center md:text-left z-10 flex flex-col justify-center min-h-[calc(100vh-128px)] sm:min-h-[calc(100vh-160px)]">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function Home() {
                 src="/assessts/images/My-DP.png"
                 alt="Profile"
                 fill
-                className="object-contain object-right"
+                className="object-contain object-center"
               />
             </motion.div>
           </div>
