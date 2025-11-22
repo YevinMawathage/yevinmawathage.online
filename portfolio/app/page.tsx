@@ -17,7 +17,7 @@ export default function Home() {
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="relative">
           {/* Left Content */}
-          <div className="md:w-1/2 w-full text-center md:text-left z-10 flex flex-col justify-center min-h-[calc(100vh-128px)] sm:min-h-[calc(100vh-160px)]">
+          <div className="md:w-1/2 w-full text-center md:text-left z-10 flex flex-col items-center justify-center min-h-[calc(100vh-128px)] sm:min-h-[calc(100vh-160px)]">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
 
           {/* Right Angled Image */}
-          <div className="w-full md:w-1/2 h-96 md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0">
+          <div className="hidden md:block md:w-1/2 h-96 md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0">
             <motion.div
               initial={{ opacity: 0, clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
               animate={{ opacity: 1, clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)' }}
