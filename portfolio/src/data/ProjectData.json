@@ -1,33 +1,44 @@
-// Mock data for projects
-const graphicDesignProjects = [
-  { id: 1, title: "Brand Identity - Tech Startup", category: "Branding", image: "tech startup branding", techStack: ["Illustrator", "Photoshop", "Figma"] },
-  { id: 2, title: "Product Packaging Design", category: "Packaging", image: "product packaging design", techStack: ["InDesign", "Illustrator", "3D Mock"] },
-  { id: 3, title: "Social Media Graphics", category: "Social Media", image: "social media graphics", techStack: ["Canva", "Photoshop", "After Effects"] },
-  { id: 4, title: "Logo Design Collection", category: "Logo", image: "logo design collection", techStack: ["Illustrator", "Figma"] },
-  { id: 5, title: "Magazine Layout", category: "Editorial", image: "magazine layout design", techStack: ["InDesign", "Photoshop"] },
-  { id: 6, title: "Poster Design Series", category: "Print", image: "poster design modern", techStack: ["Illustrator", "Photoshop"] },
-  { id: 7, title: "Business Card Design", category: "Stationery", image: "business card design", techStack: ["Illustrator", "Figma"] },
-  { id: 8, title: "App Icon Design", category: "Digital", image: "app icon design", techStack: ["Figma", "Illustrator"] },
-];
-
-const videoEditProjects = [
-  { id: 9, title: "Corporate Brand Video", category: "Corporate", image: "corporate video production", techStack: ["Premiere Pro", "After Effects", "DaVinci"] },
-  { id: 10, title: "Product Launch Teaser", category: "Commercial", image: "product launch video", techStack: ["Final Cut Pro", "Motion"] },
-  { id: 11, title: "Music Video Edit", category: "Music", image: "music video editing", techStack: ["Premiere Pro", "After Effects"] },
-  { id: 12, title: "Documentary Short", category: "Documentary", image: "documentary filmmaking", techStack: ["Premiere Pro", "Audition"] },
-  { id: 13, title: "Social Media Reels", category: "Social", image: "social media video reels", techStack: ["CapCut", "Premiere Pro"] },
-  { id: 14, title: "Event Highlight Reel", category: "Event", image: "event video highlights", techStack: ["Final Cut Pro", "DaVinci"] },
-  { id: 15, title: "YouTube Channel Intro", category: "Motion", image: "youtube intro animation", techStack: ["After Effects", "Cinema 4D"] },
-  { id: 16, title: "Promo Video Campaign", category: "Advertising", image: "promo video marketing", techStack: ["Premiere Pro", "After Effects"] },
-];
-
-const websiteProjects = [
-  { id: 17, title: "E-commerce Platform", category: "E-commerce", image: "ecommerce website design", techStack: ["React", "Node.js", "MongoDB"] },
-  { id: 18, title: "SaaS Dashboard", category: "SaaS", image: "saas dashboard interface", techStack: ["Next.js", "TypeScript", "Tailwind"] },
-  { id: 19, title: "Restaurant Website", category: "Hospitality", image: "restaurant website design", techStack: ["React", "Firebase", "Stripe"] },
-  { id: 20, title: "Portfolio Website", category: "Personal", image: "portfolio website design", techStack: ["Next.js", "Framer Motion", "CSS"] },
-  { id: 21, title: "Real Estate Platform", category: "Real Estate", image: "real estate website", techStack: ["Vue.js", "Express", "PostgreSQL"] },
-  { id: 22, title: "Fitness App Landing", category: "Health", image: "fitness app website", techStack: ["React", "GraphQL", "Apollo"] },
-  { id: 23, title: "Agency Website", category: "Business", image: "agency website design", techStack: ["Gatsby", "Contentful", "SCSS"] },
-  { id: 24, title: "Blog Platform", category: "Content", image: "blog website design", techStack: ["Next.js", "Sanity", "Vercel"] },
-];
+[
+  {
+    "id": 1,
+    "title": "Brand Identity Design",
+    "category": "Graphic Design",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["Illustrator", "Photoshop", "InDesign"]
+  },
+  {
+    "id": 2,
+    "title": "Corporate Video",
+    "category": "Video Editing",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["Premiere Pro", "After Effects"]
+  },
+  {
+    "id": 3,
+    "title": "E-Commerce Platform",
+    "category": "Web Development",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["React", "Framer Motion"]
+  },
+  {
+    "id": 4,
+    "title": "Abstract Art Series",
+    "category": "Graphic Design",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["Illustrator", "Photoshop"]
+  },
+  {
+    "id": 5,
+    "title": "Portfolio Website",
+    "category": "Web Development",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["Next.js", "Framer Motion"]
+  },
+  {
+    "id": 6,
+    "title": "Product Photography",
+    "category": "Other",
+    "image": "/assessts/images/docker.png",
+    "techStack": ["Lightroom", "Photoshop"]
+  }
+]

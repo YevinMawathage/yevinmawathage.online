@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Project {
@@ -43,6 +43,14 @@ export function PortfolioSection({ title, projects, id }: PortfolioSectionProps)
       });
     }
   };
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      const scrollContainer = scrollRef.current;
+      const middlePosition = (scrollContainer.scrollWidth - scrollContainer.clientWidth) / 2;
+      scrollContainer.scrollTo({ left: middlePosition, behavior: "instant" });
+    }
+  }, [displayProjects]);
 
   return (
     <section id={id} className="mb-16 sm:mb-20 md:mb-24 lg:mb-32 flex flex-col items-center justify-center w-full">
@@ -101,7 +109,7 @@ export function PortfolioSection({ title, projects, id }: PortfolioSectionProps)
 
         <div
           ref={scrollRef}
-          className="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4 px-4 sm:px-8 lg:px-12"
+          className="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4 px-4 sm:px-8 lg:px-12 snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {displayProjects.map((project, index) => (
@@ -111,6 +119,7 @@ export function PortfolioSection({ title, projects, id }: PortfolioSectionProps)
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.5) }}
+              className="snap-center"
             >
               <ProjectCard project={project} />
             </motion.div>
