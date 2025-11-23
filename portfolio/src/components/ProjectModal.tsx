@@ -53,6 +53,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               {/* Close Button */}
               <button
                 onClick={onClose}
+                title="Close"
+                aria-label="Close"
                 className="absolute top-4 right-4 z-10 p-2 bg-neutral-900/80 hover:bg-neutral-800 rounded-full text-neutral-400 hover:text-white transition-colors border border-neutral-700"
               >
                 <X size={20} />
