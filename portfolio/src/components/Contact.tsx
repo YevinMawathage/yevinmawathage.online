@@ -2,9 +2,9 @@ import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 export function Contact() {
   const socialLinks = [
-    { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
-    { icon: Github, label: "GitHub", href: "https://github.com" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+    { icon: Mail, label: "Email", href: "mailto:yevinmawathage2003@gmail.com" },
+    { icon: Github, label: "GitHub", href: "https://github.com/yevinmawathage" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/yevin-mawathage" },
     { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
   ];
 
@@ -14,7 +14,7 @@ export function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl mb-4 text-zinc-100">Get In Touch</h2>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-            Have a project in mind? Let's collaborate and create something amazing together.
+            Have a project in mind? Let&apos;s collaborate and create something amazing together.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function Contact() {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-linear-to-br from-zinc-800 to-zinc-900 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -40,7 +40,7 @@ export function Contact() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-linear-to-br from-zinc-800 to-zinc-900 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -52,7 +52,7 @@ export function Contact() {
                 <textarea
                   id="message"
                   rows={6}
-                  className="w-full px-4 py-3 bg-linear-to-br from-zinc-800 to-zinc-900 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 text-zinc-100 focus:border-zinc-500 focus:outline-none transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>

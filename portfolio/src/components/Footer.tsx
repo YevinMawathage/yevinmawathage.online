@@ -22,7 +22,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden">
+    <footer className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden bg-linear-to-b from-neutral-900 to-black">
       {/* Background Large Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.h2
@@ -33,7 +33,7 @@ export function Footer() {
           className="text-[13vw] font-bold whitespace-nowrap select-none"
           style={{ lineHeight: 1 }}
         >
-          LET'S TALK
+          LET&apos;S TALK
         </motion.h2>
       </div>
 
