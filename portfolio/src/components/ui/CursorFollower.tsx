@@ -13,6 +13,12 @@ export function CursorFollower() {
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
@@ -34,8 +40,7 @@ export function CursorFollower() {
     };
   }, [cursorX, cursorY, isVisible]);
 
-  // Don't render on server or if not visible yet
-  if (typeof window === 'undefined') return null;
+  if (!mounted) return null;
 
   return (
     <>

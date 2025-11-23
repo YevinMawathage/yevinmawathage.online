@@ -53,7 +53,7 @@ const Navbar = () => {
             </Link>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-xs sm:text-sm lg:text-base bg-gray-800 text-green-600 px-3 lg:px-4 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300"
+              className="text-xs sm:text-sm lg:text-base bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/10 text-green-600 px-3 lg:px-4 py-2 rounded-md hover:from-white/20 hover:to-white/10 transition-all duration-300"
             >
               Get In Touch
             </button>
@@ -91,16 +91,28 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-neutral-900/95 backdrop-blur-xl border-b border-neutral-800`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
-            <Link href="/work" className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium">Recent Work</Link>
-            <Link href="/about" className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium">About Me</Link>
+            <Link 
+              href="/work" 
+              onClick={() => setIsOpen(false)}
+              className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Recent Work
+            </Link>
+            <Link 
+              href="/about" 
+              onClick={() => setIsOpen(false)}
+              className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              About Me
+            </Link>
             <button 
               onClick={() => {
                 setIsOpen(false);
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="w-full text-left bg-gray-800 text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+              className="w-full text-center bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/10 text-green-600 block px-3 py-2 rounded-md text-base font-medium"
             >
               Get In Touch
             </button>

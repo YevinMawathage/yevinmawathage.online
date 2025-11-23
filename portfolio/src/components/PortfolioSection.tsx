@@ -78,7 +78,7 @@ export function PortfolioSection({ title, projects, id }: PortfolioSectionProps)
           onClick={() => scroll("left")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute left-2 sm:left-3 md:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+          className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-label="Scroll left"
         >
           <div className="relative">
@@ -131,7 +131,7 @@ export function PortfolioSection({ title, projects, id }: PortfolioSectionProps)
           onClick={() => scroll("right")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute right-2 sm:right-3 md:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+          className="hidden lg:block absolute right-6 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           aria-label="Scroll right"
         >
           <div className="relative">

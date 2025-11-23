@@ -54,7 +54,7 @@ export function Footer() {
           whileInView={{ opacity: 0.03, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-[13vw] font-bold whitespace-nowrap select-none"
+          className="text-[13vw] font-bold text-neutral-500 whitespace-nowrap select-none"
           style={{ lineHeight: 1 }}
         >
           LET&apos;S TALK
