@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import { Spotlight } from "@/src/components/ui/Spotlight";
+import { PortfolioSection } from "@/src/components/PortfolioSection";
 
 export default function Home() {
   const companies = [
@@ -12,6 +13,54 @@ export default function Home() {
     { name: "Elastic" },
     { name: "Stripe" },
   ];
+
+  const projects = [
+    {
+      id: 1,
+      title: "Brand Identity Design",
+      category: "Graphic Design",
+      image: "/assessts/images/docker.png",
+      techStack: ["Illustrator", "Photoshop", "InDesign"],
+    },
+    {
+      id: 2,
+      title: "Corporate Video",
+      category: "Video Editing",
+      image: "/assessts/images/docker.png",
+      techStack: ["Premiere Pro", "After Effects"],
+    },
+    {
+      id: 3,
+      title: "E-Commerce Platform",
+      category: "Web Development",
+      image: "/assessts/images/docker.png",
+      techStack: ["React", "Framer Motion"],
+    },
+    {
+      id: 4,
+      title: "Abstract Art Series",
+      category: "Graphic Design",
+      image: "/assessts/images/docker.png",
+      techStack: ["Illustrator", "Photoshop"],
+    },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      category: "Web Development",
+      image: "/assessts/images/docker.png",
+      techStack: ["Next.js", "Framer Motion"],
+    },
+    {
+      id: 6,
+      title: "Product Photography",
+      category: "Other",
+      image: "/assessts/images/docker.png",
+      techStack: ["Lightroom", "Photoshop"],
+    },
+  ];
+
+  const webProjects = projects.filter(p => p.category === "Web Development");
+  const graphicProjects = projects.filter(p => p.category === "Graphic Design");
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -121,6 +170,11 @@ export default function Home() {
               />
             </motion.div>
           </div>
+        </div>
+        
+        <div className="mt-32 space-y-32">
+          <PortfolioSection title="Web Development" projects={webProjects} id="web-development" />
+          <PortfolioSection title="Graphic Design" projects={graphicProjects} id="graphic-design" />
         </div>
       </div>
     </main>
