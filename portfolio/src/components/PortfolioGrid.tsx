@@ -1,4 +1,21 @@
 import { ExternalLink } from "lucide-react";
+import Image, { ImageProps } from "next/image";
+import { useState } from "react";
+
+function ImageWithFallback({ src, alt, ...props }: ImageProps) {
+  const [error, setError] = useState(false);
+
+  return (
+    <Image
+      {...props}
+      alt={alt}
+      src={error ? "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=800&q=80" : src}
+      onError={() => setError(true)}
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    />
+  );
+}
 
 interface Project {
   id: number;
@@ -20,7 +37,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
           key={project.id}
           className="group relative overflow-hidden bg-zinc-800 border border-zinc-700 hover:border-zinc-600 transition-all duration-300"
         >
-          <div className="aspect-[4/3] overflow-hidden">
+          <div className="aspect-[4/3] overflow-hidden relative">
             <ImageWithFallback
               src={project.image}
               alt={project.title}
