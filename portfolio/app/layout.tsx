@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../src/components/Navbar";
+import { Footer } from "@/src/components/Footer";
 import { CursorFollower } from "@/src/components/ui/CursorFollower";
 
 const spaceMono = Space_Mono({
@@ -25,6 +26,7 @@ export default function RootLayout({
         <CursorFollower />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
