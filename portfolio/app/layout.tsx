@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../src/components/Navbar";
+import { CursorFollower } from "@/src/components/ui/CursorFollower";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={spaceMono.className}>
+        <CursorFollower />
         <Navbar />
         {children}
       </body>
