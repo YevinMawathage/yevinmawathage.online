@@ -53,9 +53,6 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
               </span>
               <h3 className="text-xl text-zinc-100 mb-2">{project.title}</h3>
               <p className="text-zinc-300 mb-4">{project.description}</p>
-              <button className="inline-flex items-center gap-2 text-white hover:gap-3 transition-all duration-300">
-                View Project <ExternalLink size={16} />
-              </button>
             </div>
           </div>
 
