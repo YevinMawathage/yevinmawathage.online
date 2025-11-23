@@ -16,7 +16,8 @@ export function CursorFollower() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -46,23 +47,25 @@ export function CursorFollower() {
     <>
       {/* Small dot that follows cursor exactly */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-green-500 rounded-full pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-3 h-3 bg-green-500 rounded-full pointer-events-none hidden md:block"
         style={{
           translateX: cursorX,
           translateY: cursorY,
           x: "-50%",
           y: "-50%",
+          zIndex: 9999,
         }}
       />
       
       {/* Larger circle that follows with spring physics */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 border border-green-500/50 rounded-full pointer-events-none z-[9998] hidden md:block"
+        className="fixed top-0 left-0 w-12 h-12 border border-green-500/50 rounded-full pointer-events-none hidden md:block"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
           x: "-50%",
           y: "-50%",
+          zIndex: 9998,
         }}
       >
         <div className="absolute inset-0 bg-green-500/10 rounded-full blur-[2px]" />
