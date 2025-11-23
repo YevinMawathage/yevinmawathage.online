@@ -84,12 +84,12 @@ export function AboutMe() {
 
             {/* CTA */}
             <div className="mt-12">
-              <a 
-                href="/contact" 
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition-colors font-medium"
               >
                 Let&apos;s Work Together
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
