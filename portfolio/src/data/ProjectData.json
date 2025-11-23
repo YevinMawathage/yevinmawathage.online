@@ -4,41 +4,59 @@
     "title": "Brand Identity Design",
     "category": "Graphic Design",
     "image": "/assessts/images/docker.png",
-    "techStack": ["Illustrator", "Photoshop", "InDesign"]
+    "techStack": ["Illustrator", "Photoshop", "InDesign"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "A comprehensive brand identity design project including logo creation, color palette selection, and typography guidelines."
   },
   {
     "id": 2,
     "title": "Corporate Video",
     "category": "Video Editing",
     "image": "/assessts/images/docker.png",
-    "techStack": ["Premiere Pro", "After Effects"]
+    "techStack": ["Premiere Pro", "After Effects"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "Professional corporate video production featuring motion graphics, sound design, and color grading."
   },
   {
     "id": 3,
     "title": "E-Commerce Platform",
     "category": "Web Development",
     "image": "/assessts/images/docker.png",
-    "techStack": ["React", "Framer Motion"]
+    "techStack": ["React", "Framer Motion"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "A fully functional e-commerce platform with product catalog, shopping cart, and secure checkout integration."
   },
   {
     "id": 4,
     "title": "Abstract Art Series",
     "category": "Graphic Design",
     "image": "/assessts/images/docker.png",
-    "techStack": ["Illustrator", "Photoshop"]
+    "techStack": ["Illustrator", "Photoshop"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "A series of abstract digital art pieces exploring form, color, and composition."
   },
   {
     "id": 5,
     "title": "Portfolio Website",
     "category": "Web Development",
     "image": "/assessts/images/docker.png",
-    "techStack": ["Next.js", "Framer Motion"]
+    "techStack": ["Next.js", "Framer Motion"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "A personal portfolio website showcasing projects and skills with interactive animations and responsive design."
   },
   {
     "id": 6,
     "title": "Product Photography",
     "category": "Other",
     "image": "/assessts/images/docker.png",
-    "techStack": ["Lightroom", "Photoshop"]
+    "techStack": ["Lightroom", "Photoshop"],
+    "githubUrl": "https://github.com",
+    "liveUrl": "https://example.com",
+    "description": "High-quality product photography session with professional lighting and post-processing."
   }
 ]

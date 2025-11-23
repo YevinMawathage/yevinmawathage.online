@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Code2 } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { ProjectModal } from "./ProjectModal";
 
 interface Project {
   id: number;
@@ -9,6 +10,9 @@ interface Project {
   category: string;
   image: string;
   techStack?: string[];
+  description?: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 interface ProjectCardProps {
@@ -16,9 +20,17 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <motion.div
-      whileHover={{ y: -8 }}
+    <>
+      <ProjectModal 
+        project={project} 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+      <motion.div
+        whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
       className="flex-shrink-0 w-[85vw] sm:w-80 md:w-96 bg-gradient-to-br from-neutral-900 to-neutral-950 rounded-xl overflow-hidden border border-neutral-800 hover:border-green-600/50 group relative"
     >
@@ -59,22 +71,28 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Action Buttons */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <motion.button
+          <motion.a
+            href={project.liveUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-neutral-950/90 backdrop-blur-sm border border-neutral-700 hover:border-green-600 p-1.5 sm:p-2 rounded-lg transition-colors"
+            className="bg-neutral-950/90 backdrop-blur-sm border border-neutral-700 hover:border-green-600 p-1.5 sm:p-2 rounded-lg transition-colors flex items-center justify-center"
             aria-label="View Live Demo"
           >
             <ExternalLink size={14} className="sm:w-4 sm:h-4 text-green-500" />
-          </motion.button>
-          <motion.button
+          </motion.a>
+          <motion.a
+            href={project.githubUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-neutral-950/90 backdrop-blur-sm border border-neutral-700 hover:border-green-600 p-1.5 sm:p-2 rounded-lg transition-colors"
+            className="bg-neutral-950/90 backdrop-blur-sm border border-neutral-700 hover:border-green-600 p-1.5 sm:p-2 rounded-lg transition-colors flex items-center justify-center"
             aria-label="View Source Code"
           >
             <Github size={14} className="sm:w-4 sm:h-4 text-green-500" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 
@@ -114,6 +132,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <motion.button
           whileHover={{ x: 5 }}
           transition={{ duration: 0.2 }}
+          onClick={() => setIsModalOpen(true)}
           className="w-full bg-neutral-800/50 hover:bg-neutral-800 border border-neutral-700 hover:border-green-600 text-green-500 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-colors flex items-center justify-between group/button font-mono text-xs sm:text-sm"
         >
           <span className="flex items-center gap-2">
@@ -127,5 +146,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Bottom Accent Line */}
       <div className="h-0.5 bg-gradient-to-r from-transparent via-green-600/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </motion.div>
+    </>
   );
 }
