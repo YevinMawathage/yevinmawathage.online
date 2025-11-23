@@ -22,7 +22,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden bg-linear-to-b from-neutral-900 to-black">
+    <footer id="contact" className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden bg-gradient-to-b from-neutral-900 to-black">
       {/* Background Large Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.h2
@@ -142,7 +142,7 @@ export function Footer() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/yevinmawathage"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-neutral-800 hover:border-green-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm tracking-wider transition-colors hover:text-green-600 flex items-center gap-2 justify-center sm:justify-start"
@@ -151,7 +151,7 @@ export function Footer() {
               <span>GITHUB</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/yevin-mawathage"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-neutral-800 hover:border-green-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm tracking-wider transition-colors hover:text-green-600 flex items-center gap-2 justify-center sm:justify-start"

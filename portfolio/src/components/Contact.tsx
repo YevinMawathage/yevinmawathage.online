@@ -14,7 +14,7 @@ export function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl mb-4 text-zinc-100">Get In Touch</h2>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-            Have a project in mind? Let&apos;s collaborate and create something amazing together.
+            Have a project in mind? Let's collaborate and create something amazing together.
           </p>
         </div>
 

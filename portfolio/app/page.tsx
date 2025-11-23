@@ -77,10 +77,16 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex justify-center md:justify-start gap-4 mb-10 sm:mb-12 md:mb-16"
             >
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit shadow-[0_0_20px_rgba(22,163,74,0.5)]">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit shadow-[0_0_20px_rgba(22,163,74,0.5)]"
+              >
                 Let&apos;s get started
               </button>
-              <button className="border border-green-600 hover:bg-green-600/10 text-green-600 px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit">
+              <button 
+                onClick={() => document.getElementById('web-development')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-green-600 hover:bg-green-600/10 text-green-600 px-6 py-3 rounded-lg transition-colors text-sm sm:text-base w-fit"
+              >
                 View Work
               </button>
             </motion.div>

@@ -33,7 +33,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md shadow-sm font-thin">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-neutral-900/80 backdrop-blur-md shadow-sm font-thin border-b border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo */}
@@ -69,7 +69,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-green-600 hover:text-green-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-green-600 hover:text-green-700 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
               {...{ 'aria-expanded': isOpen }}
             >
                 <span className="sr-only">Open main menu</span>
@@ -93,7 +93,7 @@ const Navbar = () => {
             <Link href="/work" className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium">Recent Work</Link>
             <Link href="/about" className="text-green-600 hover:text-green-700 block px-3 py-2 rounded-md text-base font-medium">About Me</Link>
             <Link href="/contact" className="bg-gray-800 text-green-600 block px-3 py-2 rounded-md text-base font-medium">Get In Touch</Link>
-            <div className="border-t border-gray-200 my-2"></div>
+            <div className="border-t border-neutral-800 my-2"></div>
             <div className="flex justify-center space-x-4 pt-2">
                 {socialLinks.map((social) => (
                     <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700" title={`Visit ${social.href.includes('github') ? 'GitHub' : social.href.includes('linkedin') ? 'LinkedIn' : 'Twitter'} profile`}>
