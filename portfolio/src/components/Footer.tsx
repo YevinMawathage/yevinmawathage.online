@@ -1,20 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUp, Send, Github, Linkedin, Twitter } from "lucide-react";
-import { useState } from "react";
+import { ArrowUp, Send, Github, Linkedin, Twitter, Check, AlertCircle } from "lucide-react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export function Footer() {
+  const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Email:", email, "Message:", message);
-    // Reset form
-    setEmail("");
-    setMessage("");
+    setIsSubmitting(true);
+    setStatus("idle");
+
+    // Use your actual Service ID, Template ID, and Public Key here
+    emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      form.current!,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    )
+      .then((result) => {
+          console.log(result.text);
+          setStatus("success");
+          setIsSubmitting(false);
+          setEmail("");
+          setMessage("");
+          form.current?.reset();
+          
+          // Reset success message after 3 seconds
+          setTimeout(() => setStatus("idle"), 3000);
+      }, (error) => {
+          console.log(error.text);
+          setStatus("error");
+          setIsSubmitting(false);
+      });
   };
 
   const scrollToTop = () => {
@@ -22,7 +46,7 @@ export function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden bg-gradient-to-b from-neutral-900 to-black">
+    <footer id="contact" className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-20 md:px-12 lg:px-24 border-t border-neutral-800 overflow-hidden bg-linear-to-b from-neutral-900 to-black">
       {/* Background Large Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.h2
@@ -74,7 +98,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-3xl mb-16 sm:mb-20"
         >
-          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="space-y-5 sm:space-y-6">
             <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
               <div className="relative">
                 <label htmlFor="email" className="block text-xs text-green-500 mb-2 font-mono">
@@ -82,6 +106,7 @@ export function Footer() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -96,6 +121,7 @@ export function Footer() {
                 </label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="John Doe"
                   required
@@ -110,6 +136,7 @@ export function Footer() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="I'm looking to build a web application that..."
@@ -121,12 +148,27 @@ export function Footer() {
 
             <motion.button
               type="submit"
+              disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 transition-colors group text-sm sm:text-base"
+              className={`bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 transition-colors group text-sm sm:text-base ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              <span>Send Message</span>
-              <Send size={16} className="sm:w-[18px] sm:h-[18px] group-hover:translate-x-1 transition-transform" />
+              {status === "success" ? (
+                <>
+                  <span>Message Sent!</span>
+                  <Check size={16} className="sm:w-[18px] sm:h-[18px]" />
+                </>
+              ) : status === "error" ? (
+                <>
+                  <span>Error Sending</span>
+                  <AlertCircle size={16} className="sm:w-[18px] sm:h-[18px]" />
+                </>
+              ) : (
+                <>
+                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                  {!isSubmitting && <Send size={16} className="sm:w-[18px] sm:h-[18px] group-hover:translate-x-1 transition-transform" />}
+                </>
+              )}
             </motion.button>
           </form>
         </motion.div>
